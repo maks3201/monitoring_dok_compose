@@ -1,7 +1,16 @@
 # monitoring_dok_compose
 Here docker-compose file for monitoring. (prometheus, grafana, node-exporter, loki, promtail)
 To change config file in promtail, you need to execute:
-docker exec -it <container with promtail> /bin/bash
-and change file /etc/promtail/config.yml
-exit
-and then docker-compose restart
+1. docker exec -it <container with promtail> /bin/bash
+2. and change file /etc/promtail/config.yml
+3. exit
+4. and then docker-compose restart
+
+To add node-exporter job in prometheus:
+1. add 
+  - job_name: "node-exporter"
+    static_configs:
+      - targets: ["node-exporter:9100"]
+2. docker-compose restart
+
+Also you can do import 'node-exporter.json.txt' in grafana as dashboard's file configuration. 
