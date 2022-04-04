@@ -1,7 +1,8 @@
 version: "3.0"
 services:
   grafana:
-    image: grafana/grafana:8.0.6-ubuntu
+    image: grafana/grafana
+#:8.0.6-ubuntu
     ports:
       - "3000:3000"
     volumes:
