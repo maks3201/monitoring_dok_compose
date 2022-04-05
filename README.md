@@ -1,6 +1,6 @@
 # monitoring_dok_compose
 
-Here docker-compose file for monitoring. (prometheus, grafana, node-exporter, loki, promtail)
+There is docker-compose file for monitoring. (prometheus, grafana, node-exporter, loki, promtail)
 To change config file in promtail, you need to execute:
 1. docker exec -it <container with promtail> /bin/bash
 2. and change file /etc/promtail/config.yml
